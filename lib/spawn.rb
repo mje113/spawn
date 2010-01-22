@@ -99,7 +99,12 @@ module Spawn
         Spawn.close_resources
         # get a new connection so the parent can keep the original one
         ActiveRecord::Base.spawn_reconnect
-
+        
+        if Rails.cache.class == ActiveSupport::Cache::MemCacheStore
+          # get a new memcache connection
+          Rails.cache.reset
+        end
+        
         # run the block of code that takes so long
         yield
 

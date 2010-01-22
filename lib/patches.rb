@@ -105,3 +105,13 @@ if need_passenger_patch
     end
   end
 end
+
+module ActiveSupport
+  module Cache
+    class MemCacheStore
+      def reset
+        @data.reset
+      end
+    end
+  end
+end

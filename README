@@ -1,3 +1,6 @@
+NOTE: This fork contains a patch that will reset any open MemCache connections.
+See http://www.modrails.com/documentation/Users%20guide.html#%5Fexample%5F1%5Fmemcached%5Fconnection%5Fsharing%5Fharmful for reasons why.
+
 Spawn
 =====
 
